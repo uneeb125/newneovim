@@ -13,6 +13,7 @@ local servers = {
 	"jdtls",
 	"jsonls",
 	"pyright",
+    "svlangserver",
 	"rust_analyzer",
 	"sumneko_lua",
 	"taplo",

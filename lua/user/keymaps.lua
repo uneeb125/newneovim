@@ -197,6 +197,7 @@ else
     --[[ keymap("n", "<leader>cc", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts) ]]
     --[[ keymap("x", "<leader>cc", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>') ]]
     keymap("n", "<leader>cc", "gcc<CR>", opts)
+    keymap("v", "<leader>cc", "gcc<CR>", opts)
     keymap("x", "<leader>c", "gc<CR>", opts)
 
 
