@@ -31,6 +31,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Move like sonic
 keymap("n", "<A-J>", "5j", opts)
 keymap("n", "<A-K>", "5k", opts)
+keymap("n", "J", "5j", opts)
+keymap("n", "K", "5k", opts)
+
 
 
 -- Move cursor word by word
@@ -83,7 +86,7 @@ keymap("n", "s", "<cmd>w!<CR>", opts)
 
 
 -- Close and Save all
-keymap("n", "<C-q>", "<cmd>qa!<CR>", opts)
+keymap("n", "<C-z>", "<cmd>qa!<CR>", opts)
 keymap("n", "<C-s>", "<cmd>wa!<CR>", opts)
 
 
@@ -93,7 +96,7 @@ keymap("n", "<C-s>", "<cmd>wa!<CR>", opts)
                                                            -- again, remove the directories part and the file
                                                          --|| extention and then apend it to the path string. 
 -- keymap("n","<A-;>", ':w!<CR>:TermExec cmd="gcc %:p -o %:p:r && clear && %:p:h/./%:p:t:r"<CR>:ToggleTerm<CR>:ToggleTerm<CR>', opts)
-keymap("n", "<A-;>", ':RunCode<CR>:ToggleTerm<CR>:ToggleTerm<CR>', opts)
+keymap("n", "<A-;>", ':RunCode<CR>:ToggleTerm<CR>', opts)
 -- if (vim.fn.expand('%:e')==('c')) then
 --    keymap("n","<A-;>", ':w!<CR>:TermExec cmd="gcc %:p -o %:p:r && clear && %:p:h/./%:p:t:r"<CR>:ToggleTerm<CR>:ToggleTerm<CR>', opts)
 -- end
@@ -196,10 +199,17 @@ else
     -- Comment
     --[[ keymap("n", "<leader>cc", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts) ]]
     --[[ keymap("x", "<leader>cc", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>') ]]
-    keymap("n", "<leader>cc", "gcc<CR>", opts)
-    keymap("v", "<leader>cc", "gcc<CR>", opts)
+    keymap("n", "<leader>c", "gcc<CR>", opts)
+    keymap("v", "<leader>c", "gcc<CR>", opts)
     keymap("x", "<leader>c", "gc<CR>", opts)
 
+    -- Quotes
+
+    keymap("v", "\"", 'c""<Esc>hp', opts)
+    keymap("v", "'", "c''<Esc>hp", opts)
+    keymap("n", "<A-\">", 'ciw""<ESC>hp', opts)
+    keymap("n", "<A-\'>", "ciw''<ESC>hp", opts)
+    
 
     -- DAP
     keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
