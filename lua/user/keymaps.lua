@@ -43,7 +43,7 @@ keymap("n", "<A-L>", "w", opts)
 
 -- Change key map for cycling search term
 keymap("n", "b", "n", opts)
-
+keymap("n", "B", "N", opts)
 
 -- Change key map for mark
 keymap("n", "`", "m", opts)
@@ -59,6 +59,8 @@ keymap("n", "m", "$", opts)
 keymap("n", "<S-n>", "gg", opts)
 keymap("n", "<S-m>", "<S-g>", opts)
 
+-- U for redo
+keymap("n", "U", "<C-r>", opts)
 
 -- Select EveryThing in normal_mode
 keymap("n", "<C-A>", "ggVG", opts)  -- does'nt work
